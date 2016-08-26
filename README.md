@@ -1,3 +1,6 @@
+Some works done during computer science undergraduate studies at FU Berlin.
+
+2016/2015 Kai Lüke
 
 # Bachelor Thesis
 ## Design of a Python-subset Compiler in Rust targeting ZPAQL
