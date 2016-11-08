@@ -17,6 +17,8 @@ rithm. It aims to make the development of algorithms for ZPAQ more accessible an
 whether the current specification limits the suitability of ZPAQ as an universal standard for compressed
 archives.
 
+[Design of a Python-subset Compiler in Rust targeting ZPAQL, Kai Lüke](http://pothos.blogsport.eu/files/2016/10/bsc_thesis_zpaql_compiler.pdf)
+
 # Seminar Work
 ## Web Connectivity in Ghana: A Survey
 
@@ -29,3 +31,5 @@ complexity of web sites, caching and prefetching, TLS/SSL, TCP and cellular netw
 role of ISPs, Internet Exchange Points, are brought in relation.
 Measurement approaches and tailored solutions for areas
 with bad connectivity are listed. Possible ways of improvement are discussed.
+
+[Web Connectivity in Ghana: A Survey, Kai Lüke](http://pothos.blogsport.eu/files/2015/07/web-connectivity-in-ghana-a-survey.pdf)
