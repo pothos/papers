@@ -1,3 +1,5 @@
+[→ switch to github.io version](https://pothos.github.io/papers/)
+
 Some works done during computer science undergraduate studies at FU Berlin.
 
 2016/2015 Kai Lüke
@@ -17,7 +19,8 @@ rithm. It aims to make the development of algorithms for ZPAQ more accessible an
 whether the current specification limits the suitability of ZPAQ as an universal standard for compressed
 archives.
 
-[Design of a Python-subset Compiler in Rust targeting ZPAQL, Kai Lüke](http://pothos.blogsport.eu/files/2016/10/bsc_thesis_zpaql_compiler.pdf)
+PDF: [Design of a Python-subset Compiler in Rust targeting ZPAQL, Kai Lüke](http://pothos.blogsport.eu/files/2016/10/bsc_thesis_zpaql_compiler.pdf)
+HTML (pdf2htmlEX): [Design of a Python-subset Compiler in Rust targeting ZPAQL, Kai Lüke](https://pothos.github.io/papers/bsc_thesis_zpaql_compiler.pdf2htmlEX.html)
 
 # Seminar Work
 ## Web Connectivity in Ghana: A Survey
@@ -32,4 +35,5 @@ role of ISPs, Internet Exchange Points, are brought in relation.
 Measurement approaches and tailored solutions for areas
 with bad connectivity are listed. Possible ways of improvement are discussed.
 
-[Web Connectivity in Ghana: A Survey, Kai Lüke](http://pothos.blogsport.eu/files/2015/07/web-connectivity-in-ghana-a-survey.pdf)
+PDF: [Web Connectivity in Ghana: A Survey, Kai Lüke](http://pothos.blogsport.eu/files/2015/07/web-connectivity-in-ghana-a-survey.pdf)
+HTML (pdf2htmlEX): [Web Connectivity in Ghana: A Survey, Kai Lüke](https://pothos.github.io/papers/web-connectivity-in-ghana-a-survey.pdf2htmlEX.html)
