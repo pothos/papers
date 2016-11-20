@@ -4250,7 +4250,7 @@ flag 𝐹, 256 32-bit registers 𝑅0 …𝑅255 and the arrays 𝑀 (8-bit elem
 registers and arrays hold 0. The size of 𝐻 and 𝑀 is defined in the block header along with the information
 which context-mixing components are used.
 For each encoded or decoded byte hcomp gets run to set the contexts for the components. The context
-data for a components 𝑖 < 256 has to be stored in 𝐻[𝑖]. As first input hcomp sees whether a postprocessor
+data for a components 𝑖 &lt; 256 has to be stored in 𝐻[𝑖]. As first input hcomp sees whether a postprocessor
 
 10
 
@@ -4268,7 +4268,7 @@ brackets.
 Operations on the 32-bit registers and elements of 𝐻 are 𝑚𝑜𝑑 232 and interpreted as positive numbers in
 comparisons. Indexes access into 𝑀 and 𝐻 is 𝑚𝑜𝑑 𝑚𝑠𝑖𝑧𝑒 or 𝑚𝑜𝑑 ℎ𝑠𝑖𝑧𝑒 and denoted as *B for 𝑀[𝐵], *C for
 𝑀[𝐶] and *D for 𝐻[𝐷]. Because 𝑀 holds bytes operations on *B and *C are 𝑚𝑜𝑑 256 and swapping via
-B*<>A or C*<>A alters only the lower byte of 𝐴 [8].
+B*&lt;&gt;A or C*&lt;&gt;A alters only the lower byte of 𝐴 [8].
 
 Instructions
 
@@ -4294,7 +4294,7 @@ X=0
 
 set X to 0
 
-X<>A
+X&lt;&gt;A
 
 swap (X is not A)
 
@@ -4304,7 +4304,7 @@ set X to X
 
 X= N
 
-set X to 0 <= 𝑁 <= 255
+set X to 0 &lt;= 𝑁 &lt;= 255
 
 A+=X
 
@@ -4326,11 +4326,11 @@ A%=X
 
 𝐴 = 𝐴 𝑚𝑜𝑑 𝑋 (set 𝐴 = 0 if 𝑋 = 0)
 
-A&=X
+A&amp;=X
 
 binary AND with X
 
-A&~=X
+A&amp;~=X
 
 binary AND with flipped bits of X
 
@@ -4342,11 +4342,11 @@ A^=X
 
 binary XOR with X
 
-A<<=X
+A&lt;&lt;=X
 
 bitwise left shift of A by 𝑋 𝑚𝑜𝑑 32 bits
 
-A>>=X
+A&gt;&gt;=X
 
 bitwise right shift of A by 𝑋 𝑚𝑜𝑑 32 bits
 
@@ -4366,33 +4366,33 @@ N,
 
 A%=
 
-N, A&=
+N, A&amp;=
 
 N,
 
 11
 
-same as previous instructions but with 0 <= 𝑁 <= 255
+same as previous instructions but with 0 &lt;= 𝑁 &lt;= 255
 
-A&~= N, A|= N,
-A^= N, A<<= N,
-A>>= N
+A&amp;~= N, A|= N,
+A^= N, A&lt;&lt;= N,
+A&gt;&gt;= N
 A==X
 
 𝐹 = 1 if 𝐴 = 𝑋 otherwise 𝐹 = 0
 
-A<X
+A&lt;X
 
-𝐹 = 1 if 𝐴 < 𝑋 otherwise 𝐹 = 0
+𝐹 = 1 if 𝐴 &lt; 𝑋 otherwise 𝐹 = 0
 
-A>X
+A&gt;X
 
-𝐹 = 1 if 𝐴 > 𝑋 otherwise 𝐹 = 0
-N, A<
+𝐹 = 1 if 𝐴 &gt; 𝑋 otherwise 𝐹 = 0
+N, A&lt;
 
 N,
 
-same as above but with 0 <= 𝑁 <= 255
+same as above but with 0 &lt;= 𝑁 &lt;= 255
 
 N, B=R
 
@@ -4401,7 +4401,7 @@ N,
 set A, B, C or D to 𝑅𝑁
 
 A==
-A> N
+A&gt; N
 A=R
 
 C=R N, D=R N
@@ -4427,7 +4427,7 @@ HASHD
 
 JMP I
 
-add −128 <= 𝐼 <= 127 to PC relative to the following instruction, so 𝐼 = 0 has
+add −128 &lt;= 𝐼 &lt;= 127 to PC relative to the following instruction, so 𝐼 = 0 has
 no effect and 𝐼 = −1 is an endless loop (in the specification a positive N is used, so
 𝑃𝐶𝑓 𝑜𝑙𝑙𝑜𝑤𝑖𝑛𝑔 += ((𝑁 + 128) 𝑚𝑜𝑑 256) − 128)
 
@@ -4441,7 +4441,7 @@ jump if 𝐹 = 0
 
 LJ L
 
-𝑃𝐶𝑓 𝑜𝑙𝑙𝑜𝑤𝑖𝑛𝑔 = 𝐿 with 0 <= 𝐿 < 216 (in the specification written as LJ N M because
+𝑃𝐶𝑓 𝑜𝑙𝑙𝑜𝑤𝑖𝑛𝑔 = 𝐿 with 0 &lt;= 𝐿 &lt; 216 (in the specification written as LJ N M because
 
 it is a 3-byte instruction with 𝑃𝐶𝑓 𝑜𝑙𝑙𝑜𝑤𝑖𝑛𝑔 = 𝑁 + 256 ⋅ 𝑀)
 Beside the opcodes libzpaq also supports using helper macros like if(not)? … (else)? … endif, the
@@ -4449,7 +4449,7 @@ long jump versions if(not)?l … (elsel)? … endifl and do … (while|until|for
 be converted to conditional jump opcodes. An if-block is executed if 𝐹 = 1, the while-jump is executed if
 𝐹 = 1, an until-jump is executed if 𝐹 = 0. So that means the test for the condition has to be written before
 
-the macro: a> 255 if … endif. The statements can also be interweaved, e.g. write a do-while-loop or a
+the macro: a&gt; 255 if … endif. The statements can also be interweaved, e.g. write a do-while-loop or a
 continue-jump as do … if … forever endif.
 In a ZPAQ config file the two sections for hcomp and pcomp are written behind the context mixing model
 configuration. The pcomp section is optional. Comments can appear everywhere within brackets.
@@ -4458,7 +4458,7 @@ configuration. The pcomp section is optional. Comments can appear everywhere wit
 
 2 The ZPAQ Standard Format for Compressed Data
 
-Syntax: (where 𝐼 < 𝑁 and 2𝐻𝐻 , 2𝐻𝑀 , 2𝑃𝐻 and 2𝑃𝑀 define the size of 𝐻 and 𝑀 for each section)
+Syntax: (where 𝐼 &lt; 𝑁 and 2𝐻𝐻 , 2𝐻𝑀 , 2𝑃𝐻 and 2𝑃𝑀 define the size of 𝐻 and 𝑀 for each section)
 comp HH HM PH PM N
 (I COMPONENT (ARG)+ )*
 hcomp
@@ -4501,7 +4501,7 @@ based on which predicts better , no contexts even for bits)
 hcomp
 r=a 2 (R2 = A, input byte in R2)
 d=0
-a<<= 9 *d=a (H[D] = A) (set context to actual byte)
+a&lt;&lt;= 9 *d=a (H[D] = A) (set context to actual byte)
 (leaving first 9 bits free for the partially decoded byte)
 a=r 2 (A = R2)
 
@@ -4571,14 +4571,14 @@ b=a (save input)
 a=c a== 1 if (expect code ccxxxxxx as input)
 (cc is number of offset bytes following)
 (00 xxxxxx means x+1 literal bytes follow)
-a=b a>>= 6 a&= 3 a> 0 if
+a=b a&gt;&gt;= 6 a&amp;= 3 a&gt; 0 if
 a++ c=a (high 2 bits is code length)
-*d=0 a=b a>>= 3 hashd
+*d=0 a=b a&gt;&gt;= 3 hashd
 
 18
 
 else
-a=b a&= 63 a+= 5 c=a (literal length)
+a=b a&amp;= 63 a+= 5 c=a (literal length)
 *d=0 a=b hashd
 endif
 23
@@ -4599,7 +4599,7 @@ c= 124 *d=0 (5+ length of postprocessor)
 
 else (literal or offset)
 c-(model literals in order 1 context , offset order 0)
-a> 5 if *d=0 a=b hashd endif
+a&gt; 5 if *d=0 a=b hashd endif
 endif
 
 33
@@ -4609,10 +4609,10 @@ endif
 (model parse state as context)
 38
 
-a=c a> 5 if a= 5 endif hashd
+a=c a&gt; 5 if a= 5 endif hashd
 halt
 pcomp ./lzpre c ; (code below is equivalent to ”lzpre d”)
-a> 255 if (end of segment)
+a&gt; 255 if (end of segment)
 b=0 d=0
 
 43
@@ -4643,17 +4643,17 @@ Input format:
 58
 
 c=a a=d a== 0 if
-a=c a>>= 6 a++ d=a
+a=c a&gt;&gt;= 6 a++ d=a
 a== 1 if (state?)
 a+=c r=a 1 a=0 r=a 2 (literal len=c+1 off=0)
 else
-a== 2 if a=c a&= 7 r=a 2 (short match: off=c&7)
+a== 2 if a=c a&amp;= 7 r=a 2 (short match: off=c&amp;7)
 
 63
 
-a=c a>>= 3 a-= 3 r=a 1 (len=(c>>3) -3)
+a=c a&gt;&gt;= 3 a-= 3 r=a 1 (len=(c&gt;&gt;3) -3)
 else (3 or 4 byte match)
-a=c a&= 63 a++ r=a 1 a=0 r=a 2 (off=0, len=(c&63) -1)
+a=c a&amp;= 63 a++ r=a 1 a=0 r=a 2 (off=0, len=(c&amp;63) -1)
 endif
 68
 
@@ -4666,17 +4666,17 @@ a=r 1 a-- a== 0 if d=0 endif r=a 1 (if (--len==0) state =0)
 73
 
 else
-a> 2 if (reading offset)
-a=r 2 a<<= 8 a|=c r=a 2 d-- (off=off <<8|c, --state)
+a&gt; 2 if (reading offset)
+a=r 2 a&lt;&lt;= 8 a|=c r=a 2 d-- (off=off &lt;&lt;8|c, --state)
 else (state==2, write match)
-a=r 2 a<<= 8 a|=c c=a a=b a-=c a-- c=a (c=i-off -1)
+a=r 2 a&lt;&lt;= 8 a|=c c=a a=b a-=c a-- c=a (c=i-off -1)
 
 78
 
 d=r 1 (d=len)
 do (copy and output d=len bytes)
 a=*c *b=a out c++ b++
-d-- a=d a> 0 while
+d-- a=d a&gt; 0 while
 (d=state =0. off , len don’t matter)
 
 2.4 Examples: A simple Context Model and LZ1 with a Context Model
@@ -4708,20 +4708,20 @@ Not all data can be compressed. Because if we build a – necessarily bijective1
 
 𝛴𝑖 →
 
-0<𝑖≤𝑛∈ℕ
+0&lt;𝑖≤𝑛∈ℕ
 
 ⋃
 
 𝛴𝑖
 
-0<𝑖≤𝑛∈ℕ
+0&lt;𝑖≤𝑛∈ℕ
 
 for strings 𝑚 ∈ 𝛴∗, |𝑚| ≤ 𝑛 to strings 𝑧 ∈ 𝛴, |𝑧| ≤ 𝑛 , starting from an identity, every time we remap an
 input 𝑚1 , whereas 𝑓 (𝑚1 ) = 𝑧1 , to a shorter compressed representation 𝑧2 , whereas 𝑓 −1 (𝑧2 ) = 𝑚2 and
-|𝑧2 | < |𝑧1 |, so that now 𝑓 ′ (𝑚1 ) = 𝑧2 and |𝑓 ′ (𝑚1 )| < |𝑓 (𝑚1 )|, we have to map 𝑚2 to 𝑧1 so that 𝑓 ′ (𝑚2 ) = 𝑧1
+|𝑧2 | &lt; |𝑧1 |, so that now 𝑓 ′ (𝑚1 ) = 𝑧2 and |𝑓 ′ (𝑚1 )| &lt; |𝑓 (𝑚1 )|, we have to map 𝑚2 to 𝑧1 so that 𝑓 ′ (𝑚2 ) = 𝑧1
 
-and indeed make this swap in order to maintain the bijection, ending up with |𝑓 ′ (𝑚2 )| > |𝑓 (𝑚2 )| because
-|𝑧1 | > |𝑧2 |. So while 𝑓 ′ compresses 𝑚1 it expands 𝑚2 and this holds for each iteration when we change our
+and indeed make this swap in order to maintain the bijection, ending up with |𝑓 ′ (𝑚2 )| &gt; |𝑓 (𝑚2 )| because
+|𝑧1 | &gt; |𝑧2 |. So while 𝑓 ′ compresses 𝑚1 it expands 𝑚2 and this holds for each iteration when we change our
 
 compression scheme.
 Luckily, most data which is relevant to us and interesting for compression has patterns and other data where
@@ -4795,7 +4795,7 @@ instead of generating the digits in pcomp phase , use the next expected digit as
 To compress: zpaqd cinst pi10k.cfg pi10k.zpaq pi10000.txt)
 comp 0 14 0 0 1
 
-(2^14 > 10000)
+(2^14 &gt; 10000)
 
 0 cm 13 0
 7
@@ -4803,7 +4803,7 @@ comp 0 14 0 0 1
 hcomp
 ifnot (only first run)
 (Compute pi to 10000 digits in M using the formula:
-pi=4; for (d=r1*20/3;d>0;--d) pi=pi*d/(2*d+1)+2;
+pi=4; for (d=r1*20/3;d&gt;0;--d) pi=pi*d/(2*d+1)+2;
 where r1 is the number of base 100 digits.
 The precision is 1 bit per iteration so 20/3
 
@@ -4838,7 +4838,7 @@ http://mattmahoney.net/dc/pi.cfg
 
 a=*b a*=d a+=c c=a a%= 10 *b=a
 a=c a/= 10 c=a
-a=b a> 0 while
+a=b a&gt; 0 while
 27
 
 (divide M /= (2d+1), remainder in c)
@@ -4849,8 +4849,8 @@ a=c a%=d c=a
 
 32
 
-a=r 1 b++ a>b while
-a=d a>>= 1 d=a
+a=r 1 b++ a&gt;b while
+a=d a&gt;&gt;= 1 d=a
 (add 2)
 b=0 a= 2 a+=*b *b=a
 
@@ -4859,7 +4859,7 @@ b=0 a= 2 a+=*b *b=a
 d-- a=d a== 0 until
 halt
 endif
-a=*b a<<= 9 *d=a b++ (set context for expected digit taken from M)
+a=*b a&lt;&lt;= 9 *d=a b++ (set context for expected digit taken from M)
 halt
 
 42
@@ -4884,7 +4884,7 @@ comp 2 14 0 0 4
 
 8
 
-(2^14 > 10000)
+(2^14 &gt; 10000)
 
 0 cm 18 0
 
@@ -4904,7 +4904,7 @@ r=a 2
 a=r 0
 a== 0 if (only first run)
 (Compute pi to 10000 digits using the formula:
-pi=4; for (d=r1*20/3;d>0;--d) pi=pi*d/(2*d+1)+2;
+pi=4; for (d=r1*20/3;d&gt;0;--d) pi=pi*d/(2*d+1)+2;
 where r1 is the number of base 100 digits.
 
 18
@@ -4929,7 +4929,7 @@ b-a=*b a*=d a+=c c=a a%= 10 *b=a
 28
 
 a=c a/= 10 c=a
-a=b a> 0 while
+a=b a&gt; 0 while
 (divide M /= (2d+1), remainder in c)
 a=d a+=d a++ d=a
 
@@ -4938,8 +4938,8 @@ a=d a+=d a++ d=a
 do
 a=c a*= 10 a+=*b c=a a/=d *b=a
 a=c a%=d c=a
-a=r 1 b++ a>b while
-a=d a>>= 1 d=a
+a=r 1 b++ a&gt;b while
+a=d a&gt;&gt;= 1 d=a
 
 38
 
@@ -4952,7 +4952,7 @@ c= 2 (point to 4 of 3.14)
 
 a= 1
 r=a 0
-a<<= 14 a-- (last element of ring buffer)
+a&lt;&lt;= 14 a-- (last element of ring buffer)
 b=a
 a-= 4 (first element of ring bufer , pointer in r3)
 
@@ -4974,10 +4974,10 @@ c++
 58
 
 if (pi: set context for expected digit)
-a=*c c++ a<<= 1 a++ a<<= 9 *d=a (distinguish between pi number context and character
+a=*c c++ a&lt;&lt;= 1 a++ a&lt;&lt;= 9 *d=a (distinguish between pi number context and character
 context by 1 bit for sure)
 else (other:)
-a=r 2 a<<= 10 *d=a c= 2 (set context to actual byte)
+a=r 2 a&lt;&lt;= 10 *d=a c= 2 (set context to actual byte)
 endif
 
 63
@@ -4986,13 +4986,13 @@ endif
 (ICM and ISSE part adapted from fast.cfg)
 a=r 2
 *b=a a=0 (save in rotating buffer M)
-hash b-d=a (save hash) a=r 3 a>b if b++ b++ b++ b++ endif a=d
+hash b-d=a (save hash) a=r 3 a&gt;b if b++ b++ b++ b++ endif a=d
 
 68
 
 hash d= 1 *d=a
-b-d=a (save hash) a=r 3 a>b if b++ b++ b++ b++ endif a=d
-hash b-d=a (save hash) a=r 3 a>b if b++ b++ b++ b++ endif a=d
+b-d=a (save hash) a=r 3 a&gt;b if b++ b++ b++ b++ endif a=d
+hash b-d=a (save hash) a=r 3 a&gt;b if b++ b++ b++ b++ endif a=d
 
 73
 
@@ -5267,7 +5267,7 @@ NAME (”[” test ”]”)?
 augassign
 
 ”+=” | ”-=” | ”*=” | ”@=” | ”//=” | ”/=” | ”%=”
-”&=” | ”|=” | ”^=” | ”<<=” | ”>>=” | ”**=”
+”&amp;=” | ”|=” | ”^=” | ”&lt;&lt;=” | ”&gt;&gt;=” | ”**=”
 
 pass_stmt
 
@@ -5339,7 +5339,7 @@ expr (comp_op expr)*
 
 comp_op
 
-”<” | ”>” | ”==” | ”>=” | ”<=” | ”!=” | ”in” | ”not” ”in” | ”is” | ”is” ”not”
+”&lt;” | ”&gt;” | ”==” | ”&gt;=” | ”&lt;=” | ”!=” | ”in” | ”not” ”in” | ”is” | ”is” ”not”
 
 expr
 
@@ -5351,7 +5351,7 @@ and_expr (”^” and_expr)*
 
 and_expr
 
-shift_expr (”&” shift_expr)*
+shift_expr (”&amp;” shift_expr)*
 
 shift_expr
 
@@ -5359,7 +5359,7 @@ arith_expr | (arith_expr (shift_op arith_expr)+)
 
 shift_op
 
-”<<” | ”>>”
+”&lt;&lt;” | ”&gt;&gt;”
 
 arith_expr
 
@@ -5417,14 +5417,14 @@ usable feature set is still reduced as stated before. In particular, one has to 
 which are absent in Python but are present in ZPAQL and thus all computations are in ℤ4294967296 i.e.
 𝑚𝑜𝑑 232 . Except for the bit shift operations with a shift of more than 32 bits. In this case the Python-subset
 
-will do a shift by 𝑋 𝑚𝑜𝑑 32 bits. To achieve the semantics of (v << X) % 2**32 or (v >> X) % 2**32
-with 𝑋 > 31 the resulting value should directly be set to 0 instead. Also / 0 and % 0 does not fail in ZPAQL
+will do a shift by 𝑋 𝑚𝑜𝑑 32 bits. To achieve the semantics of (v &lt;&lt; X) % 2**32 or (v &gt;&gt; X) % 2**32
+with 𝑋 &gt; 31 the resulting value should directly be set to 0 instead. Also / 0 and % 0 does not fail in ZPAQL
 but results in a 0 value.
 For a wrong Python input the current compiler specification might behave in a different way and even accept
 it without a failure. Therefore it is required that the input is a valid Python program which runs without
 exceptions.
 This requirement is also important because the current compiler does not check array boundaries, so
-index%len(hH) or index&((1<<hh)-1) should be used e.g. for a ring buffer because after the original
+index%len(hH) or index&amp;((1&lt;&lt;hh)-1) should be used e.g. for a ring buffer because after the original
 
 size of 𝐻 there comes the stack. If run as plain Python file, an exception is thrown anyway then because it
 checks array boundaries.
@@ -5499,7 +5499,7 @@ array_pH(numbervar) can be used to save a type check in ZPAQL at runtime. Also i
 cast from an address is needed after an array reference was itself stored into 𝐻 and thus became an address
 number and is then retrieved as a number again instead of a reference. In general, there are no boxed types
 but by context a variable is used as address.
-The last addressable starting point for any list is 2147483647 == (1<<31) − 1 because the compiler uses
+The last addressable starting point for any list is 2147483647 == (1&lt;&lt;31) − 1 because the compiler uses
 the 32nd bit to distinguish between pointers to 𝑀 and 𝐻 .
 The provided implementations of addr_alloc_pM, addr_free_pM, … can be found in the template (run
 ./zpaqlpy --emit-template or see src/template.rs). The returned pointer is expected to point at the
@@ -5584,8 +5584,8 @@ t | ”H[” t ”]” | ”H[t0+” x ”]” | ”H[t252+” x ”]” | ”H[
 
 op
 
-”+” | ”-” | ”*” | ”/” | ”//” | ”%” | ”**” | ”<<” | ”>>” | ”|” | ”^”
-”&” | ”or” | ”and” | ”==” | ”!=” | ”<” | ”<=” | ”>” | ”>=”
+”+” | ”-” | ”*” | ”/” | ”//” | ”%” | ”**” | ”&lt;&lt;” | ”&gt;&gt;” | ”|” | ”^”
+”&amp;” | ”or” | ”and” | ”==” | ”!=” | ”&lt;” | ”&lt;=” | ”&gt;” | ”&gt;=”
 
 uop
 
@@ -5612,7 +5612,7 @@ comment
 7 Design of the Compiler in Rust
 
 The var on the left side of an assignment can not be a number. The operators or and and differ from the
-binary versions | and & as they represent the semantics of Python or and and i.e. they evaluate to the original
+binary versions | and &amp; as they represent the semantics of Python or and and i.e. they evaluate to the original
 value and not simply to the boolean choices of 1 and 0 for True and False while the binary operators use
 bitwise AND and OR. Operator !v tests against v==0 while ~v inverts the bits.
 The choices made might not be the best and a totally different IR is possible which could introduce variables
@@ -6080,7 +6080,7 @@ s11760-015-0783-3. http://dx.doi.org/10.1007/s11760-015-0783-3.
 A context mixing model with a preprocessor for run length encoding is written. Three components are
 used to form the network. Create a new template which will then be modified at the beginning and at the
 pcomp/hcomp sections:
-$ ./zpaqlpy --emit-template > rle_model.py
+$ ./zpaqlpy --emit-template &gt; rle_model.py
 $ chmod +x rle_model.py
 
 First the size of the arrays 𝐻 and 𝑀 for each section, hcomp and pcomp needs to be specified:
@@ -6207,7 +6207,7 @@ else:
 # write out content of last c times
 
 case_loading = False
-while c > 0:
+while c &gt; 0:
 
 46
 
@@ -6252,16 +6252,16 @@ last_value = c
 
 13
 
-hH[0] = (last_value << 1) + at_counter
-hH[0] <<= 9
+hH[0] = (last_value &lt;&lt; 1) + at_counter
+hH[0] &lt;&lt;= 9
 
 # at_counter will occupy 1 bit , therefore shift
 
 # again shift to side because of the xor with the partially decoded byte
 
 # second CM same but uses the counter for prediction
-hH[1] = (last_counter << 1) + at_counter
-hH[1] <<= 9
+hH[1] = (last_counter &lt;&lt; 1) + at_counter
+hH[1] &lt;&lt;= 9
 18
 
 hH[2] = at_counter + 0
