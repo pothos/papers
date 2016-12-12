@@ -19,7 +19,7 @@ It aims to make the development of algorithms for ZPAQ more accessible and lever
 whether the current specification limits the suitability of ZPAQ as an universal standard for compressed
 archives.
 
-PDF: [Design of a Python-subset Compiler in Rust targeting ZPAQL, Kai Lüke](http://pothos.blogsport.eu/files/2016/10/bsc_thesis_zpaql_compiler.pdf)
+PDF: [Design of a Python-subset Compiler in Rust targeting ZPAQL, Kai Lüke](http://pothos.blogsport.eu/files/2016/12/kailueke_bsc_thesis_zpaql_compiler.pdf)
 HTML (pdf2htmlEX): [Design of a Python-subset Compiler in Rust targeting ZPAQL, Kai Lüke](https://pothos.github.io/papers/bsc_thesis_zpaql_compiler.pdf2htmlEX.html)
 
 # Seminar Work
