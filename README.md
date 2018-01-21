@@ -1,8 +1,8 @@
 [→ switch to github.io version](https://pothos.github.io/papers/)
 
-Some works done during computer science undergraduate studies at FU Berlin.
+Some works done during computer science studies at FU Berlin, TU Berlin and KAIST.
 
-2016/2015 Kai Lüke
+2015-2018 Kai Lüke
 
 # Bachelor Thesis
 ## Design of a Python-subset Compiler in Rust targeting ZPAQL
@@ -23,6 +23,23 @@ PDF: [Design of a Python-subset Compiler in Rust targeting ZPAQL, Kai Lüke](htt
 HTML (pdf2htmlEX): [Design of a Python-subset Compiler in Rust targeting ZPAQL, Kai Lüke](https://pothos.github.io/papers/bsc_thesis_zpaql_compiler.pdf2htmlEX.html)
 
 # Seminar Work
+## Interaction Between the User and Kernel Space in Linux
+**Abstract**
+
+System calls based on context switches from user to kernel
+space are the established concept for interaction in operating systems.
+On top of them the Linux kernel offers various paradigms for communication and management of resources and tasks. The principles and
+basic workings of system calls, interrupts, virtual system calls, special
+purpose virtual filesystems, process signals, shared memory, pipes,
+Unix or IP sockets and other IPC methods like the POSIX or System V
+message queue and Netlink are are explained and related to each other
+in their differences. Because Linux is not a puristic project but home for
+many different concepts, only a mere overview is presented here with
+focus on system calls.
+
+PDF: [Interaction Between the User and Kernel Space in Linux, Kai Lüke](http://pothos.blogsport.eu/files/2018/01/linux_userspace_kernel_interaction.pdf)
+HTML (pdf2htmlEX): [Interaction Between the User and Kernel Space in Linux, Kai Lüke](https://pothos.github.io/papers/linux_userspace_kernel_interaction.pdf2htmlEX.html)
+
 ## Web Connectivity in Ghana: A Survey
 
 **Abstract**
