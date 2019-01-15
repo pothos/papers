@@ -1,6 +1,6 @@
 [→ switch to github.io version](https://pothos.github.io/papers/)
 
-Some works done during computer science studies at FU Berlin, TU Berlin and KAIST.
+Some works done during computer science studies at FU Berlin, TU Berlin, and KAIST.
 
 2015-2018 Kai Lüke
 
@@ -19,10 +19,36 @@ It aims to make the development of algorithms for ZPAQ more accessible and lever
 whether the current specification limits the suitability of ZPAQ as an universal standard for compressed
 archives.
 
-PDF: [Design of a Python-subset Compiler in Rust targeting ZPAQL, Kai Lüke](http://pothos.blogsport.eu/files/2016/12/kailueke_bsc_thesis_zpaql_compiler.pdf)
-HTML (pdf2htmlEX): [Design of a Python-subset Compiler in Rust targeting ZPAQL, Kai Lüke](https://pothos.github.io/papers/bsc_thesis_zpaql_compiler.pdf2htmlEX.html)
+PDF: [Design of a Python-subset Compiler in Rust targeting ZPAQL; Kai Lüke](http://pothos.blogsport.eu/files/2016/12/kailueke_bsc_thesis_zpaql_compiler.pdf)
+
+HTML (pdf2htmlEX): [Design of a Python-subset Compiler in Rust targeting ZPAQL; Kai Lüke](https://pothos.github.io/papers/bsc_thesis_zpaql_compiler.pdf2htmlEX.html)
+
+Code: [zpaqlpy on GitHub](https://github.com/pothos/zpaqlpy)
 
 # Seminar Work
+
+## Backward-edge Protection: Improvements on SafeStack and RETGUARD
+*Leak-resistant cryptographic return address integrity*
+
+**Abstract**
+
+The integrity of return addresses pushed to the stack is
+the oldest target of control flow attacks. No mainline
+compiler offers defenses for attacks that find the position of the return address and replace its content with a
+malicious target address. We study proposed solutions
+of the last years and try to overcome their security and
+compatibility problems. We present an accessible Clang
+compiler wrapper which offers shadow stacks or cryptographic return address integrity. Future x86 or ARM
+processors will enable the kernel to provide hardware
+shadow stacks (Intel) or fast pointer authentification
+(Qualcomm). But until then sensible applications with‐
+out highest performance requirements can make use of
+our software solution.
+
+PDF: [Backward-edge Protection: Improvements on SafeStack and RETGUARD; Alexis Gacel, Ndeye Khady Ngom, Kai Lüke](https://pothos.github.io/papers/backward-edge_protection.pdf)
+
+HTML (pdf2htmlEX): [Backward-edge Protection: Improvements on SafeStack and RETGUARD; Alexis Gacel, Ndeye Khady Ngom, Kai Lüke](https://pothos.github.io/papers/backward-edge_protection.pdf2htmlEX.html)
+
 ## Interaction Between the User and Kernel Space in Linux
 **Abstract**
 
@@ -37,8 +63,9 @@ in their differences. Because Linux is not a puristic project but home for
 many different concepts, only a mere overview is presented here with
 focus on system calls.
 
-PDF: [Interaction Between the User and Kernel Space in Linux, Kai Lüke](http://pothos.blogsport.eu/files/2018/01/linux_userspace_kernel_interaction.pdf)
-HTML (pdf2htmlEX): [Interaction Between the User and Kernel Space in Linux, Kai Lüke](https://pothos.github.io/papers/linux_userspace_kernel_interaction.pdf2htmlEX.html)
+PDF: [Interaction Between the User and Kernel Space in Linux; Kai Lüke](http://pothos.blogsport.eu/files/2018/01/linux_userspace_kernel_interaction.pdf)
+
+HTML (pdf2htmlEX): [Interaction Between the User and Kernel Space in Linux; Kai Lüke](https://pothos.github.io/papers/linux_userspace_kernel_interaction.pdf2htmlEX.html)
 
 ## Web Connectivity in Ghana: A Survey
 
@@ -52,5 +79,6 @@ role of ISPs, Internet Exchange Points, are brought in relation.
 Measurement approaches and tailored solutions for areas
 with bad connectivity are listed. Possible ways of improvement are discussed.
 
-PDF: [Web Connectivity in Ghana: A Survey, Kai Lüke](http://pothos.blogsport.eu/files/2015/07/web-connectivity-in-ghana-a-survey.pdf)
-HTML (pdf2htmlEX): [Web Connectivity in Ghana: A Survey, Kai Lüke](https://pothos.github.io/papers/web-connectivity-in-ghana-a-survey.pdf2htmlEX.html)
+PDF: [Web Connectivity in Ghana: A Survey; Kai Lüke](http://pothos.blogsport.eu/files/2015/07/web-connectivity-in-ghana-a-survey.pdf)
+
+HTML (pdf2htmlEX): [Web Connectivity in Ghana: A Survey; Kai Lüke](https://pothos.github.io/papers/web-connectivity-in-ghana-a-survey.pdf2htmlEX.html)

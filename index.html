@@ -5,7 +5,7 @@
 <html>
 <body>
 <h1 style="font-size: larger;">
-Some works done during computer science studies at FU Berlin, TU Berlin and KAIST.
+Some works done during computer science studies at FU Berlin, TU Berlin, and KAIST.
 </h1>
 
 2015-2018 Kai Lüke
@@ -27,8 +27,30 @@ whether the current specification limits the suitability of ZPAQ as an universal
 archives.
 </p>
 PDF: <a href="http://pothos.blogsport.eu/files/2016/12/kailueke_bsc_thesis_zpaql_compiler.pdf">Design of a Python-subset Compiler in Rust targeting ZPAQL, Kai Lüke</a><br>
-HTML (pdf2htmlEX): <a href="bsc_thesis_zpaql_compiler.pdf2htmlEX.html" target="_blank">Design of a Python-subset Compiler in Rust targeting ZPAQL, Kai Lüke</a>
+HTML (pdf2htmlEX): <a href="bsc_thesis_zpaql_compiler.pdf2htmlEX.html" target="_blank">Design of a Python-subset Compiler in Rust targeting ZPAQL, Kai Lüke</a><br>
+Code: <a href="https://github.com/pothos/zpaqlpy" target="_blank">zpaqlpy on GitHub</a>
 <h2>Seminar Work</h2>
+
+<h3>Backward-edge Protection: Improvements on SafeStack and RETGUARD</h3>
+<i>Leak-resistant cryptographic return address integrity</i>
+<h4>Abstract</h4>
+<p>
+The integrity of return addresses pushed to the stack is
+the oldest target of control flow attacks. No mainline
+compiler offers defenses for attacks that find the position of the return address and replace its content with a
+malicious target address. We study proposed solutions
+of the last years and try to overcome their security and
+compatibility problems. We present an accessible Clang
+compiler wrapper which offers shadow stacks or cryptographic return address integrity. Future x86 or ARM
+processors will enable the kernel to provide hardware
+shadow stacks (Intel) or fast pointer authentification
+(Qualcomm). But until then sensible applications with‐
+out highest performance requirements can make use of
+our software solution.
+</p>
+PDF: <a href="https://pothos.github.io/papers/backward-edge_protection.pdf">Backward-edge Protection: Improvements on SafeStack and RETGUARD; Alexis Gacel, Ndeye Khady Ngom, Kai Lüke</a><br>
+HTML (pdf2htmlEX): <a href="https://pothos.github.io/papers/backward-edge_protection.pdf2htmlEX.html" target="_blank">Backward-edge Protection: Improvements on SafeStack and RETGUARD; Alexis Gacel, Ndeye Khady Ngom, Kai Lüke</a>
+<br>
 
 <h3>Interaction Between the User and Kernel Space in Linux</h3>
 <h4>Abstract</h4>
