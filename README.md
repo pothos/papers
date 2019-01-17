@@ -1,8 +1,35 @@
 [→ switch to github.io version](https://pothos.github.io/papers/)
 
-Some works done during computer science studies at FU Berlin, TU Berlin, and KAIST.
+Some works done during computer science studies at FU Berlin (BSc), TU Berlin, and KAIST (Dual-Degree MSc).
 
-2015-2018 Kai Lüke
+2015-2019 Kai Lüke
+
+# Master Thesis
+## Memory-safe Network Services Through A Userspace Networking Switch
+
+**Abstract**
+
+A network service needs to be resilient against malicious input from the Internet.
+Specially programs written in C are prone to memory corruption bugs which are the basis for remote code execution attacks.
+Memory-safe languages solve this problem for application code running in userspace.
+The TCP/IP network stack however runs in the operating system kernel, which is written in C and vulnerable to memory corruption.
+Therefore, this work explored moving the TCP/IP stack into the memory-safe userspace process while providing a compatible API. The process should share an IP address with the kernel and integrate with the kernel's loopback interface. This solution keeps the benefits of a full-featured OS and does not impose different IPs per process or changes in the application logic.
+I analyzed the requirements for deploying memory-safe TCP/IP services along with the kernel network stack.
+The existing switching solutions for userspace network stacks do not meet these requirements because they do not handle untrusted packets in a memory-safe language and expose the kernel network stack to untrusted packets.
+I present a memory-safe L4 software switch that connects multiple userspace network stacks and the host kernel network stack.
+The switch allows the kernel and userspace network stacks to share an IP address. It also firewalls the host kernel network stack while supporting outgoing connections for updates.
+To make memory-safe userspace networking easily usable I developed a socket library for Rust. Its in-app TCP/IP stack provides the same socket API types as the standard library and is based on smoltcp.
+The combination of a memory-safe userspace switch and userspace TCP/IP stack expands the memory-safety of existing Rust web services to the TCP/IP layer with low porting efforts.
+
+PDF: [Memory-safe Network Services Through A Userspace Networking Switch; Kai Lüke](https://pothos.github.io/papers/msc_thesis_memory-safe_network_services_userspace_switch.pdf)
+
+HTML (pdf2htmlEX): [Memory-safe Network Services Through A Userspace Networking Switch; Kai Lüke](https://pothos.github.io/papers/msc_thesis_memory-safe_network_services_userspace_switch.pdf2htmlEX.html)
+
+Slides as PDF: [Slides](msc_thesis_memory-safe_network_services_userspace_switch_slides.pdf)
+
+Slides as HTML (pdf2htmlEX): [Slides](msc_thesis_memory-safe_network_services_userspace_switch_slides.pdf2htmlEX.html)
+
+Code: [usnetd on GitHub](https://github.com/ANLAB-KAIST/usnetd), [usnet_sockets on GitHub](https://github.com/ANLAB-KAIST/usnet_sockets)
 
 # Bachelor Thesis
 ## Design of a Python-subset Compiler in Rust targeting ZPAQL

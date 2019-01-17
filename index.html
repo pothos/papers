@@ -5,10 +5,36 @@
 <html>
 <body>
 <h1 style="font-size: larger;">
-Some works done during computer science studies at FU Berlin, TU Berlin, and KAIST.
+Some works done during computer science studies at FU Berlin (BSc), TU Berlin, and KAIST (Dual-Degree MSc).
 </h1>
 
-2015-2018 Kai Lüke
+2015-2019 Kai Lüke
+
+<h2>Master Thesis</h2>
+<h3>Memory-safe Network Services Through A Userspace Networking Switch</h3>
+
+<h4>Abstract</h4>
+
+<p>
+A network service needs to be resilient against malicious input from the Internet.
+Specially programs written in C are prone to memory corruption bugs which are the basis for remote code execution attacks.
+Memory-safe languages solve this problem for application code running in userspace.
+The TCP/IP network stack however runs in the operating system kernel, which is written in C and vulnerable to memory corruption.
+Therefore, this work explored moving the TCP/IP stack into the memory-safe userspace process while providing a compatible API. The process should share an IP address with the kernel and integrate with the kernel's loopback interface. This solution keeps the benefits of a full-featured OS and does not impose different IPs per process or changes in the application logic.
+I analyzed the requirements for deploying memory-safe TCP/IP services along with the kernel network stack.
+The existing switching solutions for userspace network stacks do not meet these requirements because they do not handle untrusted packets in a memory-safe language and expose the kernel network stack to untrusted packets.
+I present a memory-safe L4 software switch that connects multiple userspace network stacks and the host kernel network stack.
+The switch allows the kernel and userspace network stacks to share an IP address. It also firewalls the host kernel network stack while supporting outgoing connections for updates.
+To make memory-safe userspace networking easily usable I developed a socket library for Rust. Its in-app TCP/IP stack provides the same socket API types as the standard library and is based on smoltcp.
+The combination of a memory-safe userspace switch and userspace TCP/IP stack expands the memory-safety of existing Rust web services to the TCP/IP layer with low porting efforts.
+</p>
+
+PDF: <a href="msc_thesis_memory-safe_network_services_userspace_switch.pdf" target="_blank">Memory-safe Network Services Through A Userspace Networking Switch; Kai Lüke</a><br>
+HTML (pdf2htmlEX): <a href="msc_thesis_memory-safe_network_services_userspace_switch.pdf2htmlEX.html" target="_blank">Memory-safe Network Services Through A Userspace Networking Switch; Kai Lüke</a><br>
+Slides as PDF: <a href="msc_thesis_memory-safe_network_services_userspace_switch_slides.pdf" target="_blank">Slides</a><br>
+Slides as HTML (pdf2htmlEX): <a href="msc_thesis_memory-safe_network_services_userspace_switch_slides.pdf2htmlEX.html" target="_blank">Slides</a><br>
+Code: <a href="https://github.com/ANLAB-KAIST/usnetd" target="_blank">usnetd on GitHub</a>, <a href="https://github.com/ANLAB-KAIST/usnet_sockets" target="_blank">usnet_sockets on GitHub</a>
+
 
 <h2>Bachelor Thesis</h2>
 <h3>Design of a Python-subset Compiler in Rust targeting ZPAQL</h3>
@@ -75,7 +101,7 @@ HTML (pdf2htmlEX): <a href="https://pothos.github.io/papers/linux_userspace_kern
 
 <p>
 Starting from the research “Dissecting web latency in Ghana”
-of *Zaki et al.* the field of Internet connectivity in Ghana is
+of <i>Zaki et al.</i> the field of Internet connectivity in Ghana is
 explored and the different aspects like latency, DNS resolution times,
 complexity of web sites, caching and prefetching, TLS/SSL, TCP and cellular network performance,
 role of ISPs, Internet Exchange Points, are brought in relation.
