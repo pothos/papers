@@ -21,7 +21,7 @@ The switch allows the kernel and userspace network stacks to share an IP address
 To make memory-safe userspace networking easily usable I developed a socket library for Rust. Its in-app TCP/IP stack provides the same socket API types as the standard library and is based on smoltcp.
 The combination of a memory-safe userspace switch and userspace TCP/IP stack expands the memory-safety of existing Rust web services to the TCP/IP layer with low porting efforts.
 
-PDF: [Memory-safe Network Services Through A Userspace Networking Switch; Kai Lüke](https://pothos.github.io/papers/msc_thesis_memory-safe_network_services_userspace_switch.pdf)
+PDF: [Memory-safe Network Services Through A Userspace Networking Switch; Kai Lüke](http://pothos.blogsport.eu/files/2019/01/msc_thesis_memory-safe_network_services_userspace_switch.pdf)
 
 HTML (pdf2htmlEX): [Memory-safe Network Services Through A Userspace Networking Switch; Kai Lüke](https://pothos.github.io/papers/msc_thesis_memory-safe_network_services_userspace_switch.pdf2htmlEX.html)
 
