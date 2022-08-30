@@ -21,7 +21,7 @@ The switch allows the kernel and userspace network stacks to share an IP address
 To make memory-safe userspace networking easily usable I developed a socket library for Rust. Its in-app TCP/IP stack provides the same socket API types as the standard library and is based on smoltcp.
 The combination of a memory-safe userspace switch and userspace TCP/IP stack expands the memory-safety of existing Rust web services to the TCP/IP layer with low porting efforts.
 
-PDF: [Memory-safe Network Services Through A Userspace Networking Switch; Kai Lüke](http://pothos.blogsport.eu/files/2019/01/msc_thesis_memory-safe_network_services_userspace_switch.pdf)
+PDF: [Memory-safe Network Services Through A Userspace Networking Switch; Kai Lüke](msc_thesis_memory-safe_network_services_userspace_switch.pdf)
 
 HTML (pdf2htmlEX): [Memory-safe Network Services Through A Userspace Networking Switch; Kai Lüke](https://pothos.github.io/papers/msc_thesis_memory-safe_network_services_userspace_switch.pdf2htmlEX.html)
 
@@ -46,7 +46,7 @@ It aims to make the development of algorithms for ZPAQ more accessible and lever
 whether the current specification limits the suitability of ZPAQ as an universal standard for compressed
 archives.
 
-PDF: [Design of a Python-subset Compiler in Rust targeting ZPAQL; Kai Lüke](http://pothos.blogsport.eu/files/2016/12/kailueke_bsc_thesis_zpaql_compiler.pdf)
+PDF: [Design of a Python-subset Compiler in Rust targeting ZPAQL; Kai Lüke](BSc_thesis_ZPAQL_compiler.pdf)
 
 HTML (pdf2htmlEX): [Design of a Python-subset Compiler in Rust targeting ZPAQL; Kai Lüke](https://pothos.github.io/papers/bsc_thesis_zpaql_compiler.pdf2htmlEX.html)
 
@@ -90,7 +90,7 @@ in their differences. Because Linux is not a puristic project but home for
 many different concepts, only a mere overview is presented here with
 focus on system calls.
 
-PDF: [Interaction Between the User and Kernel Space in Linux; Kai Lüke](http://pothos.blogsport.eu/files/2018/01/linux_userspace_kernel_interaction.pdf)
+PDF: [Interaction Between the User and Kernel Space in Linux; Kai Lüke](linux_userspace_kernel_interaction.pdf)
 
 HTML (pdf2htmlEX): [Interaction Between the User and Kernel Space in Linux; Kai Lüke](https://pothos.github.io/papers/linux_userspace_kernel_interaction.pdf2htmlEX.html)
 
@@ -106,6 +106,6 @@ role of ISPs, Internet Exchange Points, are brought in relation.
 Measurement approaches and tailored solutions for areas
 with bad connectivity are listed. Possible ways of improvement are discussed.
 
-PDF: [Web Connectivity in Ghana: A Survey; Kai Lüke](http://pothos.blogsport.eu/files/2015/07/web-connectivity-in-ghana-a-survey.pdf)
+PDF: [Web Connectivity in Ghana: A Survey; Kai Lüke](web-connectivity-in-ghana-a-survey.pdf)
 
 HTML (pdf2htmlEX): [Web Connectivity in Ghana: A Survey; Kai Lüke](https://pothos.github.io/papers/web-connectivity-in-ghana-a-survey.pdf2htmlEX.html)
